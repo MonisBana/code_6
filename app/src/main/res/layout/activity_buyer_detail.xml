@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mab.code_6.BuyerDetail">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+    <TextView
+        android:id="@+id/buyerName"
+        android:text="Name:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/buyerNameVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buyerName"
+        android:layout_toEndOf="@+id/buyerContact"
+        android:text="Monis"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/buyerContact"
+        android:text="Contact:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/buyerName"/>
+
+    <TextView
+        android:id="@+id/buyerContactVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buyerContact"
+        android:layout_toEndOf="@+id/buyerContact"
+        android:text="7666939900"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/buyerEmail"
+        android:text="Email:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buyerContact"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/buyerEmailVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buyerEmail"
+        android:layout_toEndOf="@+id/buyerContact"
+        android:text="monis@gmail.com"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/buyerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buyerEmail"
+        android:text="Address:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/buyerAddressVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/buyerAddress"
+        android:layout_toEndOf="@+id/buyerAddress"
+        android:text="APMC,Vashi,Navi Mumbai"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_below="@+id/buyerAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <EditText
+            android:id="@+id/enterOTP"
+            android:layout_weight="0.75"
+            android:hint="Enter OTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"/>
+        <Button
+            android:id="@+id/OTPBtn"
+            android:text="Enter"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_margin="6dp"/>
+    </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
