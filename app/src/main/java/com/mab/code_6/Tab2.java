@@ -24,9 +24,11 @@ public class Tab2 extends Fragment {
         return v;
     }
     public void perform(View v) {
-        lv = (ListView) v.findViewById(R.id.merchantList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, values);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(TabActivity.mSellListener);
+        Bundle bundle =  getArguments();
+        if(bundle != null){
+            String Merchant_id = getArguments().getString("FarmerOtp");
+            String Merchant_otp = getArguments().getString("MerchantOtp");
+            String Destination = getArguments().getString("Destination");
+        }
     }
 }

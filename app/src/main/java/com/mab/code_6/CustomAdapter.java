@@ -48,8 +48,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         Quantity.setText(cardset.get(position).getCropDetails().getQuantity());
         Type.setText(cardset.get(position).getCropDetails().getType());
         Price.setText(cardset.get(position).getTransportAmount()+"");
-        //cardView.setOnClickListener(MainActivity.myOnClickListener);
-
+        cardView.setOnClickListener(MainActivity.myOnClickListener);
     }
 
     @Override

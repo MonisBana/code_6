@@ -12,10 +12,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.mab.code_6.Service.APIService;
-import com.mab.code_6.models.Trip;
 import com.mab.code_6.models.Truck;
 
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,22 +41,20 @@ public class Login extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashSet<String> order_id = new HashSet<>();
-                order_id.add("5ab3f224e1cb560bd87ccf6c");
+
+                /*order_id.add("5ab3f224e1cb560bd87ccf6c");
                 order_id.add("5ab3f429e1cb560bd87ccf72");
                 order_id.add("5ab3f45ee1cb560bd87ccf75");
-                order_id.add("5ab3f4c5e1cb560bd87ccf78");
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putStringSet("order_id",order_id).apply();
-                startActivity(new Intent(Login.this, MainActivity.class));
+                order_id.add("5ab3f4c5e1cb560bd87ccf78");*/
+                //startActivity(new Intent(Login.this, MainActivity.class));
                 String Truckno = truckno.getText().toString().trim();
                 String Password = password.getText().toString().trim();
                 if(!TextUtils.isEmpty(Truckno) && !TextUtils.isEmpty(Password)) {
                     //Toast.makeText(MainActivity.this, Truckno+"", Toast.LENGTH_SHORT).show();
-                    com.mab.code_6.models.Response respons = new com.mab.code_6.models.Response();
-                    respons.setTrucknum(Truckno);
-                    respons.setPassword(Password);
-                    Truck truck = new Truck(true,respons);
-                    //sendPost(truck);
+                    Truck truck = new Truck();
+                    truck.setTrucknum(Truckno);
+                    truck.setPassword(Password);
+                    sendPost(truck);
                 }
             }
         });
@@ -63,7 +62,7 @@ public class Login extends AppCompatActivity {
 
     private void sendPost(Truck truck) {
         Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.103:8000/truckCompany/")
+                .baseUrl("http://192.168.42.20:8000/truckCompany/")
                 .addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder.build();
 
@@ -74,9 +73,14 @@ public class Login extends AppCompatActivity {
             public void onResponse(Call<Truck> call, Response<Truck> response) {
                 if (response.isSuccessful()) {
                     if (response.body().getMessage().equals(true)) {
-                        Toast.makeText(Login.this, response.body().getResponse().getTrip() + "", Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(Login.this, response.body().getMessage()+"", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(Login.this, MainActivity.class));
+                        List OrderIds = response.body().getTrip();
+                        Iterator iterator = OrderIds.iterator();
+                        HashSet<String> order_id = new HashSet<>();
+                        while(iterator.hasNext()){
+                            order_id.add((String) iterator.next());
+                        }
+                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putStringSet("order_id",order_id).apply();
+                        startActivity(new Intent(Login.this, MainActivity.class));
                     }
                     else {
                         Toast.makeText(Login.this, response.code() + "", Toast.LENGTH_SHORT).show();

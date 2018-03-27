@@ -11,6 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.mab.code_6.R.id.pager;
 import static com.mab.code_6.R.menu.main_menu;
 import static com.mab.code_6.R.id.action_add;
 
@@ -35,7 +39,13 @@ public class TabActivity extends AppCompatActivity implements TabLayout.OnTabSel
             mSellListener = new SellOnItemClickListener(this);
             //Initializing the tablayout
             tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-
+            /*Bundle extras = getIntent().getExtras();
+            Tab1 tab1 = new Tab1();
+            tab1.setArguments(extras);
+            getSupportFragmentManager().beginTransaction().commit();
+            if(extras != null){
+                Toast.makeText(getApplicationContext(), "null", Toast.LENGTH_SHORT).show();
+            }*/
             //Adding the tabs using addTab() method
             tabLayout.addTab(tabLayout.newTab().setText("Farmer"));
             tabLayout.addTab(tabLayout.newTab().setText("Merchant"));

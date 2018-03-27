@@ -1,11 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-   <ListView
-       android:id="@+id/farmerList"
+   <android.support.v7.widget.Toolbar
+       android:id="@+id/toolbar"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_below="@android:id/tabcontent"></ListView>
+       android:layout_height="wrap_content"
+       android:background="?attr/colorPrimary"
+       android:minHeight="?attr/actionBarSize"
+       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+   <RelativeLayout
+       android:layout_below="@id/toolbar"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="20dp">
+      <TextView
+          android:id="@+id/farmerName"
+          android:text="Name:"
+          android:textColor="@color/colorPrimary"
+          android:textSize="22sp"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"/>
+
+      <TextView
+          android:id="@+id/farmerNameVal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/farmerName"
+          android:layout_toEndOf="@+id/farmerName"
+          android:text="Animesh"
+          android:textSize="20sp" />
+      <TextView
+          android:id="@+id/farmerContact"
+          android:text="Contact:"
+          android:textColor="@color/colorPrimary"
+          android:textSize="22sp"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:layout_below="@+id/farmerName"/>
+
+      <TextView
+          android:id="@+id/farmerContactVal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/farmerContact"
+          android:layout_toEndOf="@+id/farmerContact"
+          android:text="8962568900"
+          android:textSize="20sp" />
+
+      <TextView
+          android:id="@+id/farmerDistrict"
+          android:text="District:"
+          android:textColor="@color/colorPrimary"
+          android:textSize="22sp"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/farmerContact"
+          android:layout_margin="8dp"/>
+
+      <TextView
+          android:id="@+id/farmerDistrictVal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/farmerDistrict"
+          android:layout_toEndOf="@+id/farmerDistrict"
+          android:text="abc@gmail.com"
+          android:textSize="20sp"/>
+      <TextView
+          android:id="@+id/farmerState"
+          android:text="State:"
+          android:textColor="@color/colorPrimary"
+          android:textSize="22sp"
+          android:textStyle="bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/farmerDistrict"
+          android:layout_margin="8dp"
+          />
+
+      <TextView
+          android:id="@+id/farmerStateVal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/farmerState"
+          android:layout_toEndOf="@+id/farmerState"
+          android:text="abc@gmail.com"
+          android:textSize="20sp"
+          />
+
+      <TextView
+          android:id="@+id/farmerAddress"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignStart="@+id/farmerState"
+          android:layout_below="@+id/farmerState"
+          android:text="Address:"
+          android:textColor="@color/colorPrimary"
+          android:textSize="22sp"
+          android:textStyle="bold"
+          />
+
+      <TextView
+          android:id="@+id/farmerAddressVal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/farmerAddress"
+          android:layout_toEndOf="@+id/farmerAddress"
+          android:text="Airoli,Navi Mumbai"
+          android:textSize="20sp" />
+      <LinearLayout
+          android:layout_below="@+id/farmerAddress"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_margin="10dp"
+          android:id="@+id/linearLayout">
+         <EditText
+             android:id="@+id/enterOTP"
+             android:layout_weight="0.75"
+             android:hint="Enter OTP"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="8dp"/>
+         <Button
+             android:id="@+id/OTPBtn"
+             android:text="Enter"
+             android:background="@color/colorPrimary"
+             android:textColor="@android:color/white"
+             android:layout_width="70dp"
+             android:layout_height="40dp"
+             android:layout_margin="6dp"/>
+      </LinearLayout>
+   </RelativeLayout>
 </RelativeLayout>

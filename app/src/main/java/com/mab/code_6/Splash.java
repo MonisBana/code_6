@@ -17,12 +17,15 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.util.ArrayList;
+
 public class Splash extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener  {
     private static final long SPLASH_DISPLAY_LENGTH = 4000;
     private GoogleApiClient gac;
     private Location loc;
     private LatLng TruckLocation;
     private int Priority;
+    private ArrayList<String> OriginLatLng,DestinationLatLng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

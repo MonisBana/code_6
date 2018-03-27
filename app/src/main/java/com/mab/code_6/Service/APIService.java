@@ -1,6 +1,7 @@
 package com.mab.code_6.Service;
 
 import com.mab.code_6.models.CropDetails;
+import com.mab.code_6.models.FarmerDetails;
 import com.mab.code_6.models.OrderDetails;
 import com.mab.code_6.models.Truck;
 
@@ -23,4 +24,8 @@ public interface APIService {
     @GET("getTrips/{order_id}")
     @Headers({"Content-Type: application/json", "Cache-Control: max-age=640000"})
     Call<OrderDetails> OrderDetails(@Path("order_id") String orderDetails);
+
+    @GET("getTrips/{user_id}")
+    @Headers({"Content-Type: application/json", "Cache-Control: max-age=640000"})
+    Call<FarmerDetails> getUser(@Path("user_id") String UserId);
 }
