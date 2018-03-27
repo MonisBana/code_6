@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mab.birthday.Surprise2">
+    <ImageView
+        android:id="@+id/surprise1Img"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_margin="5dp"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/photo"/>
+    <TextView
+        android:text="Eres mi todo"
+        android:id="@+id/Title"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@id/surprise1Img"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Title"
+        android:layout_margin="15dp"
+        android:background="@drawable/input_outline"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:lineSpacingExtra="3dp"
+        android:text="You are one of the few things that makes me smile. No matter how far away we are, your beaming face is forever engraved in my heart. Happy birthday,my other half! "/>
+    <Button
+        android:background="@color/colorPrimaryDark"
+        android:alpha="0.95"
+        android:id="@+id/surpriseBtn"
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mab.birthday.Surprise1"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/surprise1Img"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/surprise1"/>
+
+    <TextView
+        android:alpha="0.95"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/surprise1Img"
+        android:layout_alignStart="@+id/surprise1Img"
+        android:layout_below="@+id/surprise1Img"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/input_outline"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:lineSpacingExtra="3dp"
+        android:text="Giving you a surprise like this may not be possible now.But I promise one day I surely will! "
+        android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:id="@+id/surpriseBtn"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:alpha=".95"/>
+
+</RelativeLayout>
